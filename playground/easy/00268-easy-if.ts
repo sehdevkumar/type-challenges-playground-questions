@@ -19,7 +19,7 @@
 
 /* _____________ Your Code Here _____________ */
 
-type If<C, T, F> = any
+type If<C extends true | false, T, F> = C extends infer G ? G extends false ? F : T : never
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
